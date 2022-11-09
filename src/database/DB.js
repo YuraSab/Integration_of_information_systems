@@ -1,0 +1,48 @@
+export const commodity = [
+    {id: 1, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 2, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 3, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 4, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 5, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 6, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 7, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 8, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 9, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 10, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 11, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 12, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 13, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 14, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 15, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 16, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 17, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 18, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 19, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+    {id: 20, name: "", category: "", type: "", price: 100, measurement: "", photo: ""},
+];
+
+
+
+
+export const services = [
+    {id: 21, name: "Укладання ламінату",  price: 160, measurement: "м²", category: "Підлога",},
+    {id: 22, name: "Укладання паркетної дошки",  price: 200, measurement: "м²", category: "Підлога",},
+    {id: 23, name: "Укладання плитки",  price: 450, measurement: "м²", category: "Підлога",},
+    {id: 24, name: "Ґрунтування",   price: 28, measurement: "м²", category: "Підлога",},
+    {id: 25, name: "Закладення шва гіпсокартонного",   price: 60, measurement: "м/п", category: "Підлога",},
+    {id: 26, name: "Заливання наливної підлогои «cамовирівнюючої»",   price: 220, measurement: "м²", category: "Підлога",},
+    {id: 27, name: "Заливання стяжки до 5 см (вручну)",   price: 200, measurement: "м²", category: "Підлога",},
+    {id: 28, name: "Поклейка шпалер",   price: 100, measurement: "м²", category: "Стеля та стіни",},
+    {id: 29, name: "Фарбування стелі та стін",   price: 120, measurement: "м²", category: "Стеля та стіни",},
+    {id: 30, name: "Шпаклювання стін та стелі",   price: 230, measurement: "м²", category: "Стеля та стіни",},
+    {id: 31, name: "Штукатурення стін",   price: 180, measurement: "м²", category: "Стеля та стіни",},
+    {id: 32, name: "Монтаж та підключення теплої підлоги",   price: 200, measurement: "м²", category: "Підлога",},
+    {id: 33, name: "Монтаж приборів сантехнічних",   price: 350, measurement: "т.", category: "СантехнікаС",},
+    {id: 34, name: "Монтаж котла",   price: 2000, measurement: "т.", category: "Сантехніка",},
+    {id: 35, name: "Монтаж труб каналізаційних",   price: 400, measurement: "т.", category: "Сантехніка",},
+    {id: 36, name: "Розведення електричної мережі",   price: 160, measurement: "т.", category: "Електромонтажні роботи",},
+    {id: 37, name: "Розведення мережі TV та IN",   price: 270, measurement: "т.", category: "Електромонтажні роботи",},
+    {id: 38, name: "Монтаж кабельканалу",   price: 450, measurement: "од.", category: "Електромонтажні роботи",},
+    {id: 39, name: "Монтаж розеток, вимикачів",   price: 90, measurement: "од.", category: "Електромонтажні роботи",},
+    {id: 40, name: "Монтаж світильників",   price: 180, measurement: "од.", category: "Електромонтажні роботи",},
+];
