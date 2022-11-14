@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className={styles.main}>
             {
-                privateRoutes.map(value => <Link to={value.path} className={styles.link}>
+                privateRoutes.map((value, index) => <Link to={value.path} className={styles.link} key={index}>
                     {value.name}
                 </Link>)
             }
