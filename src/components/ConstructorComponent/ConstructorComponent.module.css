@@ -1,0 +1,40 @@
+.main{
+    width: 100%;
+    min-height: 500px;
+    background: white;
+    border-radius: 20px;
+    border: 2px black solid;
+}
+
+
+
+.onAdd{
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 2px black solid;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.onAddForm{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  rgba(0,0,0,0.5) ;
+}
+
+
+.form{
+    width: 800px;
+    height: 800px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+}

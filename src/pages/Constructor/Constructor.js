@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./Constructor.module.css";
-import ConstructorComponent from "../../components/Constructor/ConstructorComponent";
+import ConstructorComponent from "../../components/ConstructorComponent/ConstructorComponent";
 
 const Constructor = () => {
     return (
