@@ -80,12 +80,12 @@ const ConstructorComponent = () => {
 
             <div>
                 {
-                    commodityActive ? <AddService commodityToggle={commodityToggle}/> : null
+                    commodityActive ? <AddCommodity commodityToggle={commodityToggle}/> : null
                 }
             </div>
             <div>
                 {
-                    servicesActive ? <AddCommodity servicesToggle={servicesToggle}/> : null
+                    servicesActive ? <AddService servicesToggle={servicesToggle}/> : null
                 }
             </div>
         </div>
