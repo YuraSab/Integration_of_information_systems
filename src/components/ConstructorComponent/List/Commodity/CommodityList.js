@@ -13,8 +13,6 @@ const CommodityList = () => {
     const [commodityTypes, setCommodityTypes] = useState("");
     const masOfCommodityCategories = [{title: "Сантехніка", name: "Сантехніка"}, {title: "Підлога", name: "Підлога та покриття"}];
     const masOfCommodityTypes = [{title: "Кран", name: "Крани та умивальники"}, {title: "Ванна та душ", name: "Ванна та душ"}, {title: "Унітаз", name: "Унітази"}, {title: "Шланги", name: "Шланги та сіфони"}, {title: "Плитка", name: "Плитка"}, ];
-    console.log(commodityCategory)
-    console.log(commodityTypes)
     const [filteredList, setFilteredList] = useState(commodity);
 
 
@@ -37,10 +35,12 @@ const CommodityList = () => {
                 <CommodityCategories
                     mas={masOfCommodityCategories}
                     setCommodityCategory={setCommodityCategory}
+                    setCommodityTypes={setCommodityTypes}
                 />
                 <CommodityTypes
                     mas={masOfCommodityTypes}
                     setCommodityTypes={setCommodityTypes}
+                    setCommodityCategory={setCommodityCategory}
                 />
             </div>
 

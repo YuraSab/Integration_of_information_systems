@@ -1,9 +1,12 @@
 import React from 'react';
 
-const CommodityTypes = ({mas, setCommodityTypes}) => {
+const CommodityTypes = ({mas, setCommodityTypes, setCommodityCategory}) => {
     return (
         <div>
-            <select name="commodityCategory" onChange={event => setCommodityTypes(event.target.value)}>
+            <select name="commodityCategory" onChange={event => {
+                setCommodityTypes(event.target.value);
+                setCommodityCategory("");
+            }}>
                 <option value={""}>Nothing</option>
                 {
                     mas.map(value =>

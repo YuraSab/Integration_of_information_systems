@@ -6,7 +6,7 @@ const AddCommodity = ({commodityToggle}) => {
     return (
         <div className={styles.onAddForm} onClick={commodityToggle}>
             <div className={styles.form} onClick={event => event.stopPropagation()}>
-                AddCommodity
+
                 <CommodityList/>
             </div>
         </div>
