@@ -53,7 +53,7 @@ const ConstructorComponent = () => {
         <div className={styles.main}>
 
             <div className={styles.onTitle}>
-                <h1>Products</h1>
+                <h1 style={{paddingLeft: 20}}>Products</h1>
             </div>
             <div>
                 {
@@ -84,7 +84,7 @@ const ConstructorComponent = () => {
             </div>
 
             <div className={styles.onTitle}>
-                <h1>Services</h1>
+                <h1 style={{paddingLeft: 20}}>Services</h1>
             </div>
             <div>
                 {
@@ -101,8 +101,9 @@ const ConstructorComponent = () => {
             >
                 <h3 style={{paddingLeft: 20, cursor: "pointer"}}>+ Add service</h3>
             </div>
-            <div>
-                {summaryCommodity}
+            <div className={styles.totalSummary}>
+                <div className={styles.totalSum} style={{borderRight: "2px black dashed"}}>Total sum:</div>
+                <div className={styles.totalSum}>{summaryCommodity} UAH</div>
             </div>
 
             <div>

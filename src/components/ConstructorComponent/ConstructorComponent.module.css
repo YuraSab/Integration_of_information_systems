@@ -10,16 +10,16 @@
 
 
 .onTitle{
-    padding: 20px 100px;
+    padding: 20px 0;
     width: 100%;
     min-height: 50px;
     border-bottom: 2px black solid;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
 .onAdd{
-    padding: 20px 100px;
+    padding: 20px 0;
     width: 100%;
     min-height: 50px;
     border-bottom: 2px black solid;
@@ -54,3 +54,19 @@
 }
 
 
+.totalSummary{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.totalSum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px;
+}
