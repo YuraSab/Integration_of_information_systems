@@ -22,17 +22,25 @@ const SelectedCommodity = ({isHeading, item}) => {
             </div>
             <div className={`${styles.pricePerOne}  ${styles.flex} ${styles.border}`}>
                 {
-                    isHeading ? <h3>Price per one</h3> : <h4 style={{padding: "0 10px"}}>{item.price} UAH / {item.measurement}</h4>
+                    isHeading ? <h3>Price per one</h3> :
+                        <h4 style={{padding: "0 10px"}}>{item.price} UAH / {item.measurement}</h4>
                 }
             </div>
-            <div className={`${styles.amount}  ${styles.flex} ${styles.border}`}>
+            <div className={`${styles.amount} ${styles.flex}  ${styles.border}`}>
                 {
-                    isHeading ? <h3>Amount</h3> : null
+
+                    isHeading ? <h3 >Amount</h3> : <div>
+                        <div className={styles.plusMinus}>-</div>
+                        <h4 style={{padding: "0 10px"}}>{item.amount}</h4>
+                        <div className={styles.plusMinus}>+</div>
+                    </div>
+
                 }
+
             </div>
             <div className={`${styles.totalPrice}  ${styles.flex}`}>
                 {
-                    isHeading ? <h3>Total price</h3> : null
+                    isHeading ? <h3>Total price</h3> : <h4 style={{padding: "0 10px"}}>{item.price*item.amount} UAH</h4>
                 }
             </div>
         </div>

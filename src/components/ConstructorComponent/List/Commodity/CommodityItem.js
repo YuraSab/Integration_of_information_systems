@@ -9,7 +9,7 @@ const CommodityItem = ({item}) => {
     const dispatch = useDispatch();
 
     const onAddToCommodity = () => {
-        dispatch(addToCommodity(item));
+        dispatch(addToCommodity({...item, amount: 1}));
     };
 
 

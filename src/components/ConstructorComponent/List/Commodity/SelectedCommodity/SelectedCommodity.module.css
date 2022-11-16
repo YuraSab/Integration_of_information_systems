@@ -52,3 +52,20 @@
     max-width: 200px;
     max-height: 160px;
 }
+
+.plusMinus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25%;
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.plusMinus:hover{
+    background: #282c34;
+    color: white;
+}
