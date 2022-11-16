@@ -9,7 +9,6 @@ const AddCommodity = React.lazy(() => import("./AddCommodity"));
 
 const ConstructorComponent = () => {
 
-
     const [commodityActive, setCommodityActive] = useState(false);
     const [servicesActive, setServicesActive] = useState(false);
     const {commodityMas, servicesMas} = useSelector(({
@@ -38,21 +37,41 @@ const ConstructorComponent = () => {
     const servicesToggle = () => {
         setServicesActive(prevState => !prevState)
     }
+
+
+
+    let initialValue = 0;
+    let summaryCommodity = commodityMas.reduce(function (accumulator, currentValue) {
+
+        return accumulator + currentValue.price * currentValue.amount
+    }, initialValue);
+
+
+
+
     return (
         <div className={styles.main}>
 
+            <div className={styles.onTitle}>
+                <h1>Products</h1>
+            </div>
             <div>
-                <SelectedCommodity
-                    isHeading={true}
-                />
+                {
+                    commodityMas.length > 0 ?
+                        <SelectedCommodity
+                            isHeading={true}
+                        />
+                        :
+                        null
+                }
                 {
                     commodityMas.map(item => {
                         return (
-                                <SelectedCommodity
-                                    item = {item}
-                                    key= {item.id}
-                                    isHeading = {false}
-                                />
+                            <SelectedCommodity
+                                item={item}
+                                key={item.id}
+                                isHeading={false}
+                            />
                         )
                     })
                 }
@@ -61,14 +80,13 @@ const ConstructorComponent = () => {
                 className={styles.onAdd}
                 onClick={commodityToggle}
             >
-                <div style={{paddingLeft: 20}}>Add product</div>
+                <h3 style={{paddingLeft: 20, cursor: "pointer"}}>+ Add product</h3>
             </div>
 
+            <div className={styles.onTitle}>
+                <h1>Services</h1>
+            </div>
             <div>
-                {/*<SelectedCommodity*/}
-                {/*    isHeading={true}*/}
-                {/*/>*/}
-
                 {
                     servicesMas.map(value => {
                         return (
@@ -81,9 +99,11 @@ const ConstructorComponent = () => {
                 className={styles.onAdd}
                 onClick={servicesToggle}
             >
-                <div style={{paddingLeft: 20}}>Add service</div>
+                <h3 style={{paddingLeft: 20, cursor: "pointer"}}>+ Add service</h3>
             </div>
-
+            <div>
+                {summaryCommodity}
+            </div>
 
             <div>
                 {
@@ -95,6 +115,7 @@ const ConstructorComponent = () => {
                     servicesActive ? <AddService servicesToggle={servicesToggle}/> : null
                 }
             </div>
+
         </div>
     );
 };

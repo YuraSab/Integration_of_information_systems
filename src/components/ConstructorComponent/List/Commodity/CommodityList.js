@@ -15,7 +15,7 @@ const CommodityList = () => {
     const masOfCommodityCategories = [{title: "Сантехніка", name: "Сантехніка"}, {title: "Підлога", name: "Підлога та покриття"}];
     const masOfCommodityTypes = [{title: "Кран", name: "Крани та умивальники"}, {title: "Ванна та душ", name: "Ванна та душ"}, {title: "Унітаз", name: "Унітази"}, {title: "Шланги", name: "Шланги та сіфони"}, {title: "Плитка", name: "Плитка"}, ];
     const [filteredList, setFilteredList] = useState(commodity);
-
+    const {commodityMas} = useSelector(({commodityMas: {commodityMas}}) => ({commodityMas}));
 
 
     const commodityFiltered = useMemo(() => {
@@ -52,12 +52,14 @@ const CommodityList = () => {
                     filteredList
                         .map(value => {
 
-
+                            const filtered = commodityMas.filter(el => el.id !== value.id);
+                            const disabled = filtered.length !== commodityMas.length;
 
                         return (
                             <CommodityItem
                                 key={value.id}
                                 item={value}
+                                disabled ={disabled}
                             />
                         )
                     })

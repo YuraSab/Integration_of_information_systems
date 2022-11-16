@@ -3,7 +3,7 @@ import styles from "./CommodityList.module.css";
 import {addToCommodity} from "../../../../redux/action-creators";
 import {useDispatch} from "react-redux";
 
-const CommodityItem = ({item}) => {
+const CommodityItem = ({item, disabled}) => {
 
 
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const CommodityItem = ({item}) => {
                 <div>Price: {item.price} UAH / {item.measurement}</div>
                 <div>Product number: {item.id}</div>
                 <div>
-                    <button onClick={onAddToCommodity}>Add to estimate</button>
+                    <button disabled={disabled} onClick={onAddToCommodity}>Add to estimate</button>
                 </div>
             </div>
         </div>

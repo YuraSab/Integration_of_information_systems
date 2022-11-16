@@ -1,6 +1,7 @@
 .main{
     width: 100%;
-    min-height: 500px;
+    /*min-height: 500px;*/
+
     background: white;
     border-radius: 20px;
     border: 2px black solid;
@@ -8,7 +9,8 @@
 
 
 
-.onAdd{
+.onTitle{
+    padding: 20px 100px;
     width: 100%;
     min-height: 50px;
     border-bottom: 2px black solid;
@@ -16,7 +18,19 @@
     justify-content: start;
     align-items: center;
 }
-
+.onAdd{
+    padding: 20px 100px;
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 2px black solid;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.onAdd:hover{
+    background-color: #282c34;
+    color: white;
+}
 
 .onAddForm{
     position: fixed;
