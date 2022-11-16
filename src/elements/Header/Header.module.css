@@ -3,8 +3,9 @@
     align-items: center;
     padding-left: 75px;
     gap: 40px;
-    border-bottom: 2px black solid;
+    /*border-bottom: 2px black solid;*/
     height: 100%;
+    background: #266D5D;;
 }
 
 
@@ -13,5 +14,5 @@
     text-transform: uppercase;
     font-size: 22px;
     font-weight: bold;
-
+    color: white;
 }
