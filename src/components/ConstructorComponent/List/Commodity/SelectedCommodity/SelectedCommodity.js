@@ -22,7 +22,7 @@ const SelectedCommodity = ({isHeading, item}) => {
             </div>
             <div className={`${styles.pricePerOne}  ${styles.flex} ${styles.border}`}>
                 {
-                    isHeading ? <h3>Price per one</h3> : <h4 style={{padding: "0 10px"}}>{item.price}</h4>
+                    isHeading ? <h3>Price per one</h3> : <h4 style={{padding: "0 10px"}}>{item.price} UAH / {item.measurement}</h4>
                 }
             </div>
             <div className={`${styles.amount}  ${styles.flex} ${styles.border}`}>
