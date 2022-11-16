@@ -1,7 +1,19 @@
 import React from 'react';
 import styles from "./CommodityList.module.css";
+import {addToCommodity} from "../../../../redux/action-creators";
+import {useDispatch} from "react-redux";
 
 const CommodityItem = ({item}) => {
+
+
+    const dispatch = useDispatch();
+
+    const onAddToCommodity = () => {
+        dispatch(addToCommodity(item));
+    };
+
+
+
     return (
         <div className={styles.itemBlock}>
             <div className={styles.title}>
@@ -13,6 +25,9 @@ const CommodityItem = ({item}) => {
             <div className={styles.description}>
                 <div>Price: {item.price} UAH / {item.measurement}</div>
                 <div>Product number: {item.id}</div>
+                <div>
+                    <button onClick={onAddToCommodity}>Add to estimate</button>
+                </div>
             </div>
         </div>
     );

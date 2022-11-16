@@ -4,6 +4,7 @@ import CommodityItem from "./CommodityItem";
 import styles from "./CommodityList.module.css";
 import CommodityCategories from "./Filters/CommodityCategories";
 import CommodityTypes from "./Filters/CommodityTypes";
+import {useSelector} from "react-redux";
 
 const CommodityList = () => {
 
@@ -29,6 +30,7 @@ const CommodityList = () => {
         }
     }, [commodityCategory, commodityTypes]);
 
+
     return (
         <div>
             <div>
@@ -48,8 +50,10 @@ const CommodityList = () => {
             <div className={styles.listBlock}>
                 {
                     filteredList
-                    // filterList
                         .map(value => {
+
+
+
                         return (
                             <CommodityItem
                                 key={value.id}

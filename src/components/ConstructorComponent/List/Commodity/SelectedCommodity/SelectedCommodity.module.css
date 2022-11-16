@@ -1,0 +1,54 @@
+.estimateCommoditySelected{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: black 2px solid;
+    align-items: center;
+    justify-content: center;
+}
+
+.image{
+    width: 250px;
+    height: 200px;
+
+}
+
+.title{
+    width: 250px;
+    height: 200px;
+}
+
+.index{
+    width: 250px;
+    height: 200px;
+}
+
+.pricePerOne{
+    width: 250px;
+    height: 200px;
+}
+
+.amount{
+    width: 250px;
+    height: 200px;
+}
+
+.totalPrice{
+    width: 250px;
+    height: 200px;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border{
+    border-right: 2px black dashed;
+}
+
+.picture{
+    max-width: 200px;
+    max-height: 160px;
+}

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {addToCommodity, addToServices, deleteFromCommodity, deleteFromServices} from "../../redux/action-creators";
 import styles from "./ConstructorComponent.module.css";
+import SelectedCommodity from "./List/Commodity/SelectedCommodity/SelectedCommodity";
+
 const AddService = React.lazy(() => import("./AddService"));
 const AddCommodity = React.lazy(() => import("./AddCommodity"));
-// import AddService from "./AddService";
-// import AddCommodity from "./AddCommodity";
 
 const ConstructorComponent = () => {
 
@@ -42,12 +42,17 @@ const ConstructorComponent = () => {
         <div className={styles.main}>
 
             <div>
+                <SelectedCommodity
+                    isHeading={true}
+                />
                 {
-                    commodityMas.map(value => {
+                    commodityMas.map(item => {
                         return (
-                            <div>
-                                dsdsadasda
-                            </div>
+                                <SelectedCommodity
+                                    item = {item}
+                                    key= {item.id}
+                                    isHeading = {false}
+                                />
                         )
                     })
                 }
@@ -60,12 +65,14 @@ const ConstructorComponent = () => {
             </div>
 
             <div>
+                {/*<SelectedCommodity*/}
+                {/*    isHeading={true}*/}
+                {/*/>*/}
+
                 {
                     servicesMas.map(value => {
                         return (
-                            <div>
-                                dsdsadasda
-                            </div>
+                            <div>sdasd</div>
                         )
                     })
                 }
