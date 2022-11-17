@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addToCommodity, addToServices, deleteFromCommodity, deleteFromServices} from "../../redux/action-creators";
+import {
+    addToCommodity,
+    addToMassiveOfEstimates,
+    addToServices,
+    deleteFromCommodity,
+    deleteFromServices
+} from "../../redux/action-creators";
 import styles from "./ConstructorComponent.module.css";
 import SelectedCommodity from "./List/Commodity/SelectedCommodity/SelectedCommodity";
 import SelectedServices from "./List/Services/SelectedServices/SelectedServices";
@@ -40,7 +46,6 @@ const ConstructorComponent = () => {
     }
 
 
-
     let initialValue = 0;
     let summaryCommodity = commodityMas.reduce(function (accumulator, currentValue) {
 
@@ -52,8 +57,26 @@ const ConstructorComponent = () => {
         return accumulator + currentValue.price * currentValue.amount
     }, initialValue);
 
+    const totalSum = summaryCommodity + summaryServices;
+
+
+
+
+    const {massiveOfEstimates} = useSelector(({massiveOfEstimates: {massiveOfEstimates}}) => ({massiveOfEstimates}));
+    // console.log(massiveOfEstimates)
+    const saveEstimate = () => {
+        const objectOfEstimate = {
+            id: massiveOfEstimates.length+1,
+            commodityMas: commodityMas,
+            servicesMas: servicesMas,
+            totally: totalSum
+        }
+        dispatch(addToMassiveOfEstimates(objectOfEstimate))
+    }
 
     return (
+
+
         <div className={styles.main}>
 
             <div className={styles.onTitle}>
@@ -121,8 +144,14 @@ const ConstructorComponent = () => {
             </div>
             <div className={styles.totalSummary}>
                 <div className={styles.totalSum} style={{borderRight: "2px black dashed"}}>Total sum:</div>
-                <div className={styles.totalSum}>{summaryCommodity + summaryServices} UAH</div>
+                <div className={styles.totalSum}>{totalSum} UAH</div>
             </div>
+
+            <button className={styles.saveEstimate}
+                 onClick={saveEstimate}
+            >
+                Save estimate
+            </button>
 
             <div>
                 {

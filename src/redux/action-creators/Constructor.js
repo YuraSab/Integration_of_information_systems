@@ -2,7 +2,7 @@ import {
     ADD_TO_COMMODITY,
     DELETE_FROM_COMMODITY,
     ADD_TO_SERVICES,
-    DELETE_FROM_SERVICES
+    DELETE_FROM_SERVICES, ADD_TO_MASSIVE_OF_ESTIMATES, DELETE_FROM_MASSIVE_OF_ESTIMATES
 } from "../action-types";
 
 
@@ -27,3 +27,12 @@ export const deleteFromServices = (item) => ({
 });
 
 
+export const addToMassiveOfEstimates = (object) => ({
+    type: ADD_TO_MASSIVE_OF_ESTIMATES,
+    payload: object
+
+});
+export const deleteFromMassiveOfEstimates = (object) => ({
+    type: DELETE_FROM_MASSIVE_OF_ESTIMATES,
+    payload: object
+});

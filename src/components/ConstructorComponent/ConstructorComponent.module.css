@@ -59,6 +59,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px black solid;
 }
 .totalSum{
     display: flex;
@@ -69,4 +70,27 @@
     font-size: 25px;
     font-weight: bold;
     padding-left: 20px;
+}
+
+
+
+.saveEstimate{
+    border-radius: 4px;
+    border: 4px #266D5D solid;
+    width: 200px;
+    height: 40px;
+    padding: 4px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #266D5D;
+    cursor: pointer;
+}
+.saveEstimate:hover{
+    background: #266D5D;
+    color: black;
+    border: 4px black solid;
 }
