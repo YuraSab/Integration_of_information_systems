@@ -2,7 +2,11 @@ import {
     ADD_TO_COMMODITY,
     DELETE_FROM_COMMODITY,
     ADD_TO_SERVICES,
-    DELETE_FROM_SERVICES, ADD_TO_MASSIVE_OF_ESTIMATES, DELETE_FROM_MASSIVE_OF_ESTIMATES
+    DELETE_FROM_SERVICES,
+    ADD_TO_MASSIVE_OF_ESTIMATES,
+    DELETE_FROM_MASSIVE_OF_ESTIMATES,
+    SET_COMMODITY_AND_SERVICES,
+    CLEAR_ESTIMATE
 } from "../action-types";
 
 
@@ -35,4 +39,13 @@ export const addToMassiveOfEstimates = (object) => ({
 export const deleteFromMassiveOfEstimates = (object) => ({
     type: DELETE_FROM_MASSIVE_OF_ESTIMATES,
     payload: object
+});
+
+export const setCommodityAndServices = (object) => ({
+    type: SET_COMMODITY_AND_SERVICES,
+    payload: object
+});
+
+export const clearEstimate = () => ({
+    type: CLEAR_ESTIMATE,
 });

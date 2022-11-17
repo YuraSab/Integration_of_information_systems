@@ -1,7 +1,16 @@
 import React from 'react';
 import styles from "./EstimateItem.module.css";
+import {useDispatch} from "react-redux";
+import {setCommodityAndServices} from "../../../redux/action-creators";
+import {Link} from "react-router-dom";
 
 const EstimatesItem = ({item}) => {
+
+    const dispatch = useDispatch();
+
+    const onOpen = () => {
+        dispatch(setCommodityAndServices(item));
+    }
 
 
     return (
@@ -14,7 +23,9 @@ const EstimatesItem = ({item}) => {
             </div>
             <div style={{display: "flex", justifyContent: "center"}}>
 
-            <button className={styles.buttonOpen}>Open</button>
+                <Link to={'/constructor'}>
+            <button onClick={onOpen} className={styles.buttonOpen}>Open</button>
+                </Link>
             </div>
         </div>
     );
