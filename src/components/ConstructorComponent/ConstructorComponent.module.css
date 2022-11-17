@@ -94,3 +94,19 @@
     color: black;
     border: 4px black solid;
 }
+
+.saveEstimateNoActive{
+    border-radius: 4px;
+    border: 4px grey solid;
+    width: 200px;
+    height: 40px;
+    padding: 4px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+}

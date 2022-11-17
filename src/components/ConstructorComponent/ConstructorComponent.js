@@ -63,7 +63,7 @@ const ConstructorComponent = () => {
 
 
     const {massiveOfEstimates} = useSelector(({massiveOfEstimates: {massiveOfEstimates}}) => ({massiveOfEstimates}));
-    // console.log(massiveOfEstimates)
+    console.log(massiveOfEstimates)
     const saveEstimate = () => {
         const objectOfEstimate = {
             id: massiveOfEstimates.length+1,
@@ -147,8 +147,9 @@ const ConstructorComponent = () => {
                 <div className={styles.totalSum}>{totalSum} UAH</div>
             </div>
 
-            <button className={styles.saveEstimate}
+            <button className={(commodityMas.length<1) && (servicesMas.length<1) ? styles.saveEstimateNoActive : styles.saveEstimate}
                  onClick={saveEstimate}
+                    disabled={(commodityMas.length < 1 && servicesMas.length < 1)}
             >
                 Save estimate
             </button>
