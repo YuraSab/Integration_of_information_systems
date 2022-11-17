@@ -1,0 +1,28 @@
+.listBlock{
+    padding-top: 25px;
+    height: 750px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.itemBlock{
+    padding: 30px;
+    display: grid;
+    grid-template-areas:
+    "title description";
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    border-bottom: 2px black dashed;
+
+}
+.title{
+    grid-area: title;
+    font-size: 22px;
+}
+.description{
+    grid-area: description;
+}

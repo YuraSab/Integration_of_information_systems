@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
         case ADD_TO_SERVICES: {
             return {
                 ...state,
-                commodityMas: [...state.commodityMas, action.payload]
+                servicesMas: [...state.servicesMas, action.payload]
             }
         }
         case DELETE_FROM_SERVICES: {

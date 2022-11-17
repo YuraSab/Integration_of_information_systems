@@ -19,7 +19,6 @@ const CommodityList = () => {
 
 
     const commodityFiltered = useMemo(() => {
-        // let filterList = commodity;
         if(commodityCategory !== ""){
             let filterList = commodity.filter(el => el.category === commodityCategory);
             setFilteredList(filterList);

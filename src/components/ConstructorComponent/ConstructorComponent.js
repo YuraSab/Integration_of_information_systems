@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addToCommodity, addToServices, deleteFromCommodity, deleteFromServices} from "../../redux/action-creators";
 import styles from "./ConstructorComponent.module.css";
 import SelectedCommodity from "./List/Commodity/SelectedCommodity/SelectedCommodity";
+import SelectedServices from "./List/Services/SelectedServices/SelectedServices";
 
 const AddService = React.lazy(() => import("./AddService"));
 const AddCommodity = React.lazy(() => import("./AddCommodity"));
@@ -46,7 +47,10 @@ const ConstructorComponent = () => {
         return accumulator + currentValue.price * currentValue.amount
     }, initialValue);
 
+    let summaryServices = servicesMas.reduce(function (accumulator, currentValue) {
 
+        return accumulator + currentValue.price * currentValue.amount
+    }, initialValue);
 
 
     return (
@@ -86,15 +90,29 @@ const ConstructorComponent = () => {
             <div className={styles.onTitle}>
                 <h1 style={{paddingLeft: 20}}>Services</h1>
             </div>
+
             <div>
                 {
-                    servicesMas.map(value => {
+                    servicesMas.length > 0 ?
+                        <SelectedServices
+                            isHeading={true}
+                        />
+                        :
+                        null
+                }
+                {
+                    servicesMas.map(item => {
                         return (
-                            <div>sdasd</div>
+                            <SelectedServices
+                                item={item}
+                                key={item.id}
+                                isHeading={false}
+                            />
                         )
                     })
                 }
             </div>
+
             <div
                 className={styles.onAdd}
                 onClick={servicesToggle}
@@ -103,7 +121,7 @@ const ConstructorComponent = () => {
             </div>
             <div className={styles.totalSummary}>
                 <div className={styles.totalSum} style={{borderRight: "2px black dashed"}}>Total sum:</div>
-                <div className={styles.totalSum}>{summaryCommodity} UAH</div>
+                <div className={styles.totalSum}>{summaryCommodity + summaryServices} UAH</div>
             </div>
 
             <div>
