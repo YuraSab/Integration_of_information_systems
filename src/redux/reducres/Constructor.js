@@ -46,7 +46,9 @@ export default (state = initialState, action) => {
         case ADD_TO_MASSIVE_OF_ESTIMATES: {
             return {
                 ...state,
-                massiveOfEstimates: [...state.massiveOfEstimates, action.payload]
+                massiveOfEstimates: [...state.massiveOfEstimates, action.payload],
+                commodityMas: [],
+                servicesMas: []
             }
         }
         case DELETE_FROM_MASSIVE_OF_ESTIMATES: {
