@@ -11,7 +11,6 @@ const ServicesItem = ({item, disabled}) => {
         dispatch(addToServices({...item, amount: 1}));
     };
 
-
     return (
         <div className={styles.itemBlock}>
             <div className={styles.title}>

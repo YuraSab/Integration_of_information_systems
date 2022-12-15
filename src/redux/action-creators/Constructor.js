@@ -30,12 +30,12 @@ export const deleteFromServices = (item) => ({
     payload: item
 });
 
-
 export const addToMassiveOfEstimates = (object) => ({
     type: ADD_TO_MASSIVE_OF_ESTIMATES,
     payload: object
 
 });
+
 export const deleteFromMassiveOfEstimates = (object) => ({
     type: DELETE_FROM_MASSIVE_OF_ESTIMATES,
     payload: object

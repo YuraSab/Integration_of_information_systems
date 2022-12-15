@@ -27,13 +27,10 @@ const ServicesList = () => {
                     setServicesCategory={setServicesCategory}
                 />
             </div>
-
-
             <div className={styles.listBlock}>
                 {
                     filteredList
                         .map(value => {
-
                             const filtered = servicesMas.filter(el => el.id !== value.id);
                             const disabled = filtered.length !== servicesMas.length;
 

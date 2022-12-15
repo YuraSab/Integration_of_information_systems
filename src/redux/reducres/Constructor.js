@@ -22,13 +22,11 @@ export default (state = initialState, action) => {
         }
         case DELETE_FROM_COMMODITY: {
             const edited = state.commodityMas.filter(el => el.id !== action.payload.id)
-
             return {
                 ...state,
                 commodityMas: edited
             }
         }
-
         case ADD_TO_SERVICES: {
             return {
                 ...state,
@@ -37,7 +35,6 @@ export default (state = initialState, action) => {
         }
         case DELETE_FROM_SERVICES: {
             const edited = state.servicesMas.filter(el => el.id !== action.payload.id)
-
             return {
                 ...state,
                 servicesMas: edited
@@ -52,7 +49,6 @@ export default (state = initialState, action) => {
             }
         }
         case DELETE_FROM_MASSIVE_OF_ESTIMATES: {
-
             const filtered = state.massiveOfEstimates.filter(el => el.id !== action.payload.id);
             return {
                 ...state,
@@ -60,7 +56,6 @@ export default (state = initialState, action) => {
             }
         }
         case SET_COMMODITY_AND_SERVICES: {
-
             return {
                 ...state,
                 commodityMas: action.payload.commodityMas,
@@ -68,14 +63,12 @@ export default (state = initialState, action) => {
             }
         }
         case CLEAR_ESTIMATE: {
-
             return {
                 ...state,
                 commodityMas: [],
                 servicesMas:  []
             }
         }
-
         default: {
             return state
         }

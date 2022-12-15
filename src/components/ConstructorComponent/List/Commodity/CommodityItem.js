@@ -5,13 +5,11 @@ import {useDispatch} from "react-redux";
 
 const CommodityItem = ({item, disabled}) => {
 
-
     const dispatch = useDispatch();
 
     const onAddToCommodity = () => {
         dispatch(addToCommodity({...item, amount: 1}));
     };
-
 
 
     return (

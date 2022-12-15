@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from "./EstimateItem.module.css";
 import {useDispatch} from "react-redux";
-import {setCommodityAndServices} from "../../../redux/action-creators";
+import {deleteFromMassiveOfEstimates, setCommodityAndServices} from "../../../redux/action-creators";
 import {Link} from "react-router-dom";
+import crossIcon from "../../../icons/cross.png";
 
 const EstimatesItem = ({item}) => {
 
@@ -10,6 +11,9 @@ const EstimatesItem = ({item}) => {
 
     const onOpen = () => {
         dispatch(setCommodityAndServices(item));
+    }
+    const onDeleteEstimate = () => {
+        dispatch(deleteFromMassiveOfEstimates(item));
     }
 
 
@@ -24,9 +28,15 @@ const EstimatesItem = ({item}) => {
             <div style={{display: "flex", justifyContent: "center"}}>
 
                 <Link to={'/constructor'}>
-            <button onClick={onOpen} className={styles.buttonOpen}>Open</button>
+                    <button onClick={onOpen} className={styles.buttonOpen}>Open</button>
                 </Link>
             </div>
+            <img
+                alt={'crossIcon'}
+                src={crossIcon}
+                className={styles.crossIcon}
+                onClick={onDeleteEstimate}
+            />
         </div>
     );
 };

@@ -13,20 +13,22 @@ const Constructor = () => {
     const dispatch = useDispatch();
 
     const onClear = () => {
-        dispatch(clearEstimate())
+        dispatch(clearEstimate());
     }
 
     return (
         <div className={styles.main}>
             <div className={styles.constructor}>
-                {
-                    commodityMas.length < 1 && servicesMas.length < 1 ?
-                        null
-                        :
-                        <div className={styles.newEstimateDiv}>
-                            <button onClick={onClear} className={styles.newEstimateButton}>New estimate</button>
-                        </div>
-                }
+                <div>
+                    {
+                        commodityMas.length < 1 && servicesMas.length < 1 ?
+                            null
+                            :
+                            <div className={styles.newEstimateDiv}>
+                                <button onClick={onClear} className={styles.newEstimateButton}>New estimate</button>
+                            </div>
+                    }
+                </div>
                 <ConstructorComponent/>
             </div>
         </div>

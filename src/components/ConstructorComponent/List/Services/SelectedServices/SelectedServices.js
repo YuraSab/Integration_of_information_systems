@@ -33,15 +33,12 @@ const SelectedServices = ({isHeading, item}) => {
             </div>
             <div className={`${styles.amount} ${styles.flex}  ${styles.border}`}>
                 {
-
                     isHeading ? <h3>Amount</h3> : <div>
                         <div className={styles.plusMinus}>-</div>
                         <h4 style={{padding: "0 10px"}}>{item.amount}</h4>
                         <div className={styles.plusMinus}>+</div>
                     </div>
-
                 }
-
             </div>
             <div className={`${styles.totalPrice}  ${styles.flex}  ${styles.border}`}>
                 {
