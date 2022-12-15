@@ -7,6 +7,7 @@ const Estimate = () => {
 
     const {massiveOfEstimates} = useSelector(({massiveOfEstimates: {massiveOfEstimates}}) => ({massiveOfEstimates}));
 
+
     return (
         <div className={styles.main}>
             {

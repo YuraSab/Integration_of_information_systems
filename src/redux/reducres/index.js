@@ -4,5 +4,6 @@ import {combineReducers} from "redux";
 export const reducers = combineReducers({
     commodityMas: constructor,
     servicesMas: constructor,
-    massiveOfEstimates: constructor
+    massiveOfEstimates: constructor,
+    editing: constructor
 });

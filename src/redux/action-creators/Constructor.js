@@ -6,7 +6,7 @@ import {
     ADD_TO_MASSIVE_OF_ESTIMATES,
     DELETE_FROM_MASSIVE_OF_ESTIMATES,
     SET_COMMODITY_AND_SERVICES,
-    CLEAR_ESTIMATE
+    CLEAR_ESTIMATE, ON_SELECT_EDIT_ESTIMATE, EDIT_ESTIMATE
 } from "../action-types";
 
 
@@ -48,4 +48,14 @@ export const setCommodityAndServices = (object) => ({
 
 export const clearEstimate = () => ({
     type: CLEAR_ESTIMATE,
+});
+
+export const onSelectEditEstimate = (object) => ({
+    type: ON_SELECT_EDIT_ESTIMATE,
+    payload: object
+});
+
+export const editEstimate = (object) => ({
+   type: EDIT_ESTIMATE,
+   payload: object
 });

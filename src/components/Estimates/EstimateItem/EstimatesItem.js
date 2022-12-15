@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from "./EstimateItem.module.css";
 import {useDispatch} from "react-redux";
-import {deleteFromMassiveOfEstimates, setCommodityAndServices} from "../../../redux/action-creators";
+import {
+    deleteFromMassiveOfEstimates,
+    onSelectEditEstimate,
+    setCommodityAndServices
+} from "../../../redux/action-creators";
 import {Link} from "react-router-dom";
 import crossIcon from "../../../icons/cross.png";
+import wrenchIcon from "../../../icons/wrench_icon.webp";
 
 const EstimatesItem = ({item}) => {
 
@@ -15,7 +20,9 @@ const EstimatesItem = ({item}) => {
     const onDeleteEstimate = () => {
         dispatch(deleteFromMassiveOfEstimates(item));
     }
-
+    const onEditEstimate = () => {
+        dispatch(onSelectEditEstimate(item));
+    }
 
     return (
         <div className={styles.main}>
@@ -31,12 +38,25 @@ const EstimatesItem = ({item}) => {
                     <button onClick={onOpen} className={styles.buttonOpen}>Open</button>
                 </Link>
             </div>
-            <img
-                alt={'crossIcon'}
-                src={crossIcon}
-                className={styles.crossIcon}
-                onClick={onDeleteEstimate}
-            />
+            <div className={styles.iconsDiv}>
+
+                <img
+                    alt={'crossIcon'}
+                    src={crossIcon}
+                    className={styles.crossIcon}
+                    onClick={onDeleteEstimate}
+                />
+
+                <Link to={'/constructor'}>
+                    <img
+                        alt={'wrenchIcon'}
+                        src={wrenchIcon}
+                        className={styles.crossIcon}
+                        onClick={onEditEstimate}
+                    />
+                </Link>
+
+            </div>
         </div>
     );
 };

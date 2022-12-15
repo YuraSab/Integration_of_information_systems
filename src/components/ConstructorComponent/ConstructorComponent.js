@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addToMassiveOfEstimates} from "../../redux/action-creators";
+import {addToMassiveOfEstimates, editEstimate} from "../../redux/action-creators";
 import styles from "./ConstructorComponent.module.css";
 import SelectedCommodity from "./List/Commodity/SelectedCommodity/SelectedCommodity";
 import SelectedServices from "./List/Services/SelectedServices/SelectedServices";
@@ -12,11 +12,12 @@ const ConstructorComponent = () => {
 
     const [commodityActive, setCommodityActive] = useState(false);
     const [servicesActive, setServicesActive] = useState(false);
-    const {commodityMas, servicesMas, massiveOfEstimates} = useSelector(({
+    const {commodityMas, servicesMas, massiveOfEstimates, editing} = useSelector(({
                                                                              commodityMas: {commodityMas},
                                                                              servicesMas: {servicesMas},
                                                                              massiveOfEstimates: {massiveOfEstimates},
-                                                                         }) => ({commodityMas, servicesMas, massiveOfEstimates}));
+                                                                             editing: {editing}
+                                                                         }) => ({commodityMas, servicesMas, massiveOfEstimates, editing}));
     const dispatch = useDispatch();
 
     const commodityToggle = () => {
@@ -37,14 +38,13 @@ const ConstructorComponent = () => {
     const totalSum = summaryCommodity + summaryServices;
 
 
-    const saveEstimate = () => {
+    const onSaveEstimate = () => {
         let generatedId;
         if(massiveOfEstimates.length<1){
             generatedId=1;
         }else {
             generatedId = massiveOfEstimates[massiveOfEstimates.length-1].id + 1;
         }
-        // let generatedId = massiveOfEstimates[massiveOfEstimates.length-1].id;
 
         const objectOfEstimate = {
             id: generatedId,
@@ -55,6 +55,20 @@ const ConstructorComponent = () => {
         };
         dispatch(addToMassiveOfEstimates(objectOfEstimate));
     }
+
+
+    const onEditEstimate = () => {
+        const objectOfEstimate = {
+            id: editing,
+            // id: massiveOfEstimates.length + 1,
+            commodityMas: commodityMas,
+            servicesMas: servicesMas,
+            totally: totalSum
+        };
+        dispatch(editEstimate(objectOfEstimate));
+    }
+
+
 
     return (
         <div className={styles.main}>
@@ -106,13 +120,26 @@ const ConstructorComponent = () => {
                 <div className={styles.totalSum}>{totalSum} UAH</div>
             </div>
 
-            <button
-                className={(commodityMas.length < 1) && (servicesMas.length < 1) ? styles.saveEstimateNoActive : styles.saveEstimate}
-                onClick={saveEstimate}
-                disabled={(commodityMas.length < 1 && servicesMas.length < 1)}
-            >
-                Save estimate
-            </button>
+
+            {
+                editing ?
+                    <button
+                        className={(commodityMas.length < 1) && (servicesMas.length < 1) ? styles.saveEstimateNoActive : styles.saveEstimate}
+                        onClick={onEditEstimate}
+                        disabled={(commodityMas.length < 1 && servicesMas.length < 1)}
+                    >
+                        Save changes
+                    </button>
+                        :
+                    <button
+                        className={(commodityMas.length < 1) && (servicesMas.length < 1) ? styles.saveEstimateNoActive : styles.saveEstimate}
+                        onClick={onSaveEstimate}
+                        disabled={(commodityMas.length < 1 && servicesMas.length < 1)}
+                    >
+                        Save estimate
+                    </button>
+            }
+
             {/* -----------------------------------------------------------------------------------------------------*/}
             <div>
                 {
