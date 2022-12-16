@@ -69,6 +69,7 @@ const ConstructorComponent = () => {
     }
 
 
+    console.log("commodityMas: ", commodityMas, "servicesMas: ", servicesMas);
 
     return (
         <div className={styles.main}>
