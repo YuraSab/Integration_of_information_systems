@@ -30,10 +30,12 @@ const ConstructorComponent = () => {
 
     let initialValue = 0;
     let summaryCommodity = commodityMas.reduce(function (accumulator, currentValue) {
-        return accumulator + currentValue.price * currentValue.amount
+        // return accumulator + currentValue.price * currentValue.amount
+        return accumulator + currentValue.price * currentValue.count
     }, initialValue);
     let summaryServices = servicesMas.reduce(function (accumulator, currentValue) {
-        return accumulator + currentValue.price * currentValue.amount
+        // return accumulator + currentValue.price * currentValue.amount
+        return accumulator + currentValue.price * currentValue.count
     }, initialValue);
     const totalSum = summaryCommodity + summaryServices;
 
